@@ -1,0 +1,117 @@
+{
+  "name": "mcp-react-test-generator",
+  "version": "1.0.0",
+  "description": "MCP (Model Context Protocol) server for automatically generating comprehensive React component test cases using Jest and React Testing Library",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-react-test-generator": "dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "example-usage.js"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jest-environment-jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.(ts|tsx|js)",
+      "**/*.(test|spec).(ts|tsx|js)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": {
+          "jsx": "react-jsx",
+          "esModuleInterop": true,
+          "allowSyntheticDefaultImports": true
+        }
+      }
+    }
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "react",
+    "testing",
+    "jest",
+    "test-generation",
+    "react-testing-library",
+    "automation",
+    "typescript",
+    "component-testing",
+    "cursor",
+    "ai-assistant"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mcp-react-test-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mcp-react-test-generator/issues"
+  },
+  "homepage": "https://github.com/yourusername/mcp-react-test-generator#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "ts-jest": "^29.4.0"
+  },
+  "peerDependencies": {
+    "@testing-library/jest-dom": ">=5.0.0",
+    "@testing-library/react": ">=12.0.0",
+    "jest": ">=27.0.0",
+    "react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@testing-library/react": {
+      "optional": false
+    },
+    "@testing-library/jest-dom": {
+      "optional": false
+    },
+    "jest": {
+      "optional": false
+    },
+    "react": {
+      "optional": false
+    }
+  }
+}

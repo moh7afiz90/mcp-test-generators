@@ -55,8 +55,13 @@ export class TestGenerator {
   private createBasicRenderTest(analysis: ComponentAnalysis): TestCase {
     const requiredProps = analysis.props
       .filter(prop => !prop.optional)
-      .map(prop => this.getDefaultPropValue(prop))
-      .join(', ');
+      .map(prop => {
+        if (prop.type.includes('() => void')) {
+          return `${prop.name}={() => {}}`;
+        }
+        return this.getDefaultPropValue(prop);
+      })
+      .join(' ');
 
     return {
       name: `should render ${analysis.componentName} component`,
